@@ -1603,6 +1603,7 @@ class Worker(ServiceCommandSection):
 
         # if we do not need to create queues, make sure they are valid
         # match previous behaviour when we validated queue names before everything else
+        self.log.info("Validating queues, %s"%queues)
         queues = self.resolve_daemon_queue_names(queues, create_if_missing=kwargs.get('create_queue', False))
 
         queues_info = [
